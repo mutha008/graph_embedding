@@ -1,8 +1,6 @@
 ## A Comprehensive Survey of Graph Embedding: Problems, Techniques and Applications
 
-ge = graph embedding
-
-2000年早期，ge算法侧重数据降维
+2000年早期，graph embedding算法侧重数据降维
 
 2010年后，1、专注用向量表达图的一部分； 2、向量表达图的全貌
 
@@ -95,4 +93,52 @@ embedding output
 2、deep learning
 
 - deep walk  
-  - 输出采用了softmax，考虑到性能，采用了两种方法
+  - 输出采用了softmax，考虑到性能，采用了两种近似方法
+  - Hierarchical softmax
+  - Negative sampling
+- 全图embedding
+  - autoencoder
+  - dnn
+
+3、边重构优化
+
+- 最大化边重构概率：生成已观察到的边的概率
+- 最小化距离的损失
+- 最小化排序范围的损失
+
+4、图kernel
+
+5、生成模型
+
+
+
+比较
+
+1、mf统计了全局的信息，而dl只用了局部上下文，所以前者效果更好，但是前者更耗时，且不能处理大规模数据
+
+2、dl效率高，但是过度依赖局部信息，并且难以找到最优的采样策略（random walk）
+
+3、边重构比前两者更有效率，但是同样缺少全局结构信息
+
+
+
+关于节点带标签/属性的解决方案：
+
+deep random walk:
+
+​	1、random walk 
+
+​	2、skip gram
+
+Discriminative deep random walk ：
+
+​	1、drw 缺少任务驱动的目标函数来优化，没有考虑节点标签
+
+​	2、本文用于分类
+
+​	3、将标签结果加入目标函数
+
+​	
+
+
+
